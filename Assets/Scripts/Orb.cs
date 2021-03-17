@@ -74,35 +74,34 @@ public class Orb : MonoBehaviour
                 {
                     transform.position = Vector3.MoveTowards(transform.position, Waypoint[current].transform.position, Time.deltaTime * Speed); 
                 }
-
-                /*if(OnWall == true)
-                {
-                    current -= 1;
-                }*/
             }
         }
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, WaypointStart.transform.position, Time.deltaTime * Speed);  
         }
-
         
         //Collision Wall settings
         GameObject[]  WallObj = GameObject.FindGameObjectsWithTag("Wall");
 
-        if(OnWaypoint == true && OnWall == true)
+        if(OnWaypoint == true)
         {
             foreach (GameObject obj in WallObj) 
 		    {
                 Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true); 
             }
         }
-        else if (OnWaypoint == false && OnWall == true)
+        else if (OnWaypoint == false)
         {
             foreach (GameObject obj in WallObj) 
 		    {
                 Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), false);
             }
+        }
+
+        if(OnWall == true && OnWaypoint == false)
+        {
+            Forward = false;            
         }
     }
 
@@ -110,27 +109,30 @@ public class Orb : MonoBehaviour
     {
         if(other.gameObject.tag == "Wall")
         {
-            if(other.gameObject.tag == "Wall")
+            OnWall = true;
+
+            if(current > 0)
             {
-                OnWall = true;
+                current -= 1;
             }
-        }
+            else
+            {
+                Active = false;
+            }        
+        }        
     }
 
     void OnCollisionExit(Collision other)
     {
         if(other.gameObject.tag == "Wall")
         {
-            if(other.gameObject.tag == "Wall")
-            {
-                OnWall = false;
-            }
-        }
+            OnWall = false;
+        }        
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Waypoint")
+        if(other.gameObject.tag == "Waypoint" || other.gameObject.tag == "Respawn")
         {
             OnWaypoint = true;
         }
@@ -138,7 +140,7 @@ public class Orb : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "Waypoint")
+        if(other.gameObject.tag == "Waypoint" || other.gameObject.tag == "Respawn")
         {
             OnWaypoint = false;
         }

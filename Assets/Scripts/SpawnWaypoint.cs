@@ -36,7 +36,7 @@ public class SpawnWaypoint : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.R) && Orb.GetComponent<Orb>().Active == false)
+        if(Input.GetMouseButtonDown(1) && Orb.GetComponent<Orb>().Active == false)
         {    
             foreach(GameObject obj in WaypointsObj)
             {
