@@ -7,6 +7,7 @@ public class Orb : MonoBehaviour
     public GameObject[] Waypoint;
     private GameObject[] Wall;
     public GameObject WaypointStart;
+    public GameObject WaypointEnd;
     public float Speed;
     public int current;
     public int currentmax;
@@ -14,6 +15,7 @@ public class Orb : MonoBehaviour
     public bool Active;
     public bool OnWaypoint;
     public bool OnWall;
+    public bool Arrived;
 
     void Start()
     {
@@ -37,71 +39,78 @@ public class Orb : MonoBehaviour
     void FixedUpdate()
     {
         //Orb Follow Waypoints
-        if(Active == true)
+        if(Arrived == false)
         {
-            if(Forward == true)
-            {  
-                if(transform.position == Waypoint[current].transform.position)
-                { 
-                    if(current < currentmax)
-                    {
-                        current += 1;              
+            if(Active == true)
+            {
+                if(Forward == true)
+                {  
+                    if(transform.position == Waypoint[current].transform.position)
+                    { 
+                        if(current < currentmax)
+                        {
+                            current += 1;              
+                        }
+                        else if(current == currentmax) 
+                        {
+                            Forward = false;
+                        }      
                     }
-                    else if(current == currentmax) 
+                    else
                     {
-                        Forward = false;
-                    }      
+                        transform.position = Vector3.MoveTowards(transform.position, Waypoint[current].transform.position, Time.deltaTime * Speed); 
+                    }
                 }
-                else
-                {
-                    transform.position = Vector3.MoveTowards(transform.position, Waypoint[current].transform.position, Time.deltaTime * Speed); 
+                else if(Forward == false)
+                {  
+                    if(transform.position == Waypoint[current].transform.position)
+                    {    
+                        if(current > 0)
+                        { 
+                            current -= 1;
+                        }
+                        else if(current == 0)
+                        {
+                            Active = false;
+                        }    
+                    }
+                    else
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, Waypoint[current].transform.position, Time.deltaTime * Speed); 
+                    }
                 }
             }
-            else if(Forward == false)
-            {  
-                if(transform.position == Waypoint[current].transform.position)
-                {    
-                    if(current > 0)
-                    { 
-                        current -= 1;
-                    }
-                    else if(current == 0)
-                    {
-                        Active = false;
-                    }    
-                }
-                else
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, WaypointStart.transform.position, Time.deltaTime * Speed);  
+            }
+            
+            //Collision Wall settings
+            GameObject[]  WallObj = GameObject.FindGameObjectsWithTag("Wall");
+
+            if(OnWaypoint == true)
+            {
+                foreach (GameObject obj in WallObj) 
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, Waypoint[current].transform.position, Time.deltaTime * Speed); 
+                    Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true); 
                 }
+            }
+            else if (OnWaypoint == false)
+            {
+                foreach (GameObject obj in WallObj) 
+                {
+                    Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), false);
+                }
+            }
+
+            if(OnWall == true && OnWaypoint == false)
+            {
+                Forward = false;            
             }
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, WaypointStart.transform.position, Time.deltaTime * Speed);  
-        }
-        
-        //Collision Wall settings
-        GameObject[]  WallObj = GameObject.FindGameObjectsWithTag("Wall");
-
-        if(OnWaypoint == true)
-        {
-            foreach (GameObject obj in WallObj) 
-		    {
-                Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true); 
-            }
-        }
-        else if (OnWaypoint == false)
-        {
-            foreach (GameObject obj in WallObj) 
-		    {
-                Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), false);
-            }
-        }
-
-        if(OnWall == true && OnWaypoint == false)
-        {
-            Forward = false;            
+            transform.position = Vector3.MoveTowards(transform.position, WaypointEnd.transform.position, Time.deltaTime * Speed); 
         }
     }
 
