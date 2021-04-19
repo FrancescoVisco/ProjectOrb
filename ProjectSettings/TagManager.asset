@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
   - NoWall
   - Waypoint
   - Orb
+  - WaypointWall
   layers:
   - Default
   - TransparentFX

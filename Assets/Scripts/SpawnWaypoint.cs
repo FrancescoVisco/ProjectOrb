@@ -28,7 +28,7 @@ public class SpawnWaypoint : MonoBehaviour
             
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "Wall" && WaypointsCounter < MaxWaipoints)
+                if (hit.transform.tag == "WaypointWall" && WaypointsCounter < MaxWaipoints)
                 {
                     Instantiate(Waypoint, hit.point, Quaternion.identity);
                     WaypointsCounter++;

@@ -86,7 +86,7 @@ public class Orb : MonoBehaviour
             }
             
             //Collision Wall settings
-            GameObject[]  WallObj = GameObject.FindGameObjectsWithTag("Wall");
+            GameObject[]  WallObj = GameObject.FindGameObjectsWithTag("WaypointWall");
 
             if(OnWaypoint == true)
             {
@@ -116,7 +116,7 @@ public class Orb : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Wall")
+        if(other.gameObject.tag == "WaypointWall")
         {
             OnWall = true;
 
@@ -133,7 +133,7 @@ public class Orb : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.tag == "Wall")
+        if(other.gameObject.tag == "WaypointWall")
         {
             OnWall = false;
         }        
