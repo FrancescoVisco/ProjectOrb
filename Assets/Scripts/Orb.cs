@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
+    [Header("Target Settings")]
     public GameObject[] Waypoint;
     private GameObject[] Wall;
     public GameObject WaypointStart;
     public GameObject WaypointEnd;
     public float Speed;
+
+    [Header("Debug")]
     public int current;
     public int currentmax;
     public bool Forward;

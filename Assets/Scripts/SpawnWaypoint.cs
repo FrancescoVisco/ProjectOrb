@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class SpawnWaypoint : MonoBehaviour
 {
+    [Header("Raycast Settings")]
     public Camera MainCamera;
+    RaycastHit hit;
+
+    [Header("Waypoint Settings")]
     public GameObject Waypoint;
     public GameObject Orb;
     private GameObject[] WaypointsObj;
     public int WaypointsCounter;
     public int MaxWaipoints = 3;
-    RaycastHit hit;
 
+    [Header("Audio Settings")]
+    private AudioSource Source;
+    public AudioClip WaypointPlacement;
+    public AudioClip NegativePlacement;
     void Start()
     {
-        
+        Source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,8 +37,13 @@ public class SpawnWaypoint : MonoBehaviour
             {
                 if (hit.transform.tag == "WaypointWall" && WaypointsCounter < MaxWaipoints)
                 {
+                    Source.PlayOneShot(WaypointPlacement, 0.7F);
                     Instantiate(Waypoint, hit.point, Quaternion.identity);
                     WaypointsCounter++;
+                }
+                else
+                {
+                    Source.PlayOneShot(NegativePlacement, 0.25F);
                 }
             }
         }

@@ -6299,6 +6299,8 @@ MonoBehaviour:
   Orb: {fileID: 282261800}
   WaypointsCounter: 0
   MaxWaipoints: 3
+  WaypointPlacement: {fileID: 8300000, guid: e0abbbf0bded0e148be5599f7438045c, type: 3}
+  NegativePlacement: {fileID: 8300000, guid: 949890bd386bcf94ea3b165a8cf62640, type: 3}
 --- !u!4 &4204582640839252
 Transform:
   m_ObjectHideFlags: 0
