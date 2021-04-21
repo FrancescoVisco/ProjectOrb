@@ -11,15 +11,21 @@ public class Orb : MonoBehaviour
     public GameObject WaypointEnd;
     public float Speed;
 
-    [Header("Debug")]
-    public int current;
-    public int currentmax;
-    public bool Forward;
-    public bool Active;
-    public bool OnWaypoint;
-    public bool OnWall;
-    public bool Arrived;
+    [Header("Material Setting")]
+    public bool Red;
+    public bool Blue;
+    public bool Yellow;
+    public Material[] OrbMat;
 
+    [Header("Debug")]
+    public bool Active;
+    public bool Arrived;
+    private int current;
+    private int currentmax;
+    private bool Forward;
+    private bool OnWaypoint;
+    private bool OnWall;
+    
     void Start()
     {
         current = 0;
@@ -37,6 +43,40 @@ public class Orb : MonoBehaviour
             Active = true;
             Forward = true;    
         }
+
+        //Material Change
+        if(Red == true && Blue == false && Yellow == false)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[0];
+       }
+        else if(Red == false && Blue == true && Yellow == false)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[1];
+       }
+        else if(Red == false && Blue == false && Yellow == true)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[2];
+       }
+        else if(Red == false && Blue == true && Yellow == true)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[3];
+       }
+        else if(Red == true && Blue == false && Yellow == true)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[4];
+       }
+        else if(Red == true && Blue == true && Yellow == false)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[5];
+       }
+        else if(Red == true && Blue == true && Yellow == true)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[6];
+       }
+        else if (Red == false && Blue == false && Yellow == false)
+       {
+           gameObject.GetComponent<MeshRenderer>().material = OrbMat[7];
+       }
     }
 
     void FixedUpdate()
@@ -90,6 +130,7 @@ public class Orb : MonoBehaviour
             
             //Collision Wall settings
             GameObject[]  WallObj = GameObject.FindGameObjectsWithTag("WaypointWall");
+            GameObject[]  NoWallObj = GameObject.FindGameObjectsWithTag("NoWall");
 
             if(OnWaypoint == true)
             {
@@ -97,10 +138,20 @@ public class Orb : MonoBehaviour
                 {
                     Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true); 
                 }
+
+                foreach (GameObject obj in NoWallObj) 
+                {
+                    Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true); 
+                }
             }
             else if (OnWaypoint == false)
             {
                 foreach (GameObject obj in WallObj) 
+                {
+                    Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), false);
+                }
+
+                foreach (GameObject obj in NoWallObj) 
                 {
                     Physics.IgnoreCollision(obj.GetComponent<Collider>(), gameObject.GetComponent<Collider>(), false);
                 }
@@ -119,7 +170,7 @@ public class Orb : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "WaypointWall")
+        if(other.gameObject.tag == "NoWall")
         {
             OnWall = true;
 
@@ -136,7 +187,7 @@ public class Orb : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.tag == "WaypointWall")
+        if(other.gameObject.tag == "NoWall")
         {
             OnWall = false;
         }        
