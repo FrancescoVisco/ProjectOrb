@@ -19,6 +19,7 @@ public class SpawnWaypoint : MonoBehaviour
     private AudioSource Source;
     public AudioClip WaypointPlacement;
     public AudioClip NegativePlacement;
+
     void Start()
     {
         Source = GetComponent<AudioSource>();

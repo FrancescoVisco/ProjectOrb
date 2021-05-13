@@ -14,7 +14,8 @@ public class RestartScene : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);             
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex;
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;              
         }
     }
 }
