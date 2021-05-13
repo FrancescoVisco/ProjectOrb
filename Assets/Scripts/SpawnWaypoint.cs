@@ -13,12 +13,17 @@ public class SpawnWaypoint : MonoBehaviour
     public GameObject Orb;
     private GameObject[] WaypointsObj;
     public int WaypointsCounter;
-    public int MaxWaipoints = 3;
+    public int MaxWaipoints;
+    private int WaypointLights;
+
+    [Header("Waypoint Lights Settings")]
+    public GameObject[] WaypointLight;
+    public Material[] WaypointLightMaterial;
 
     [Header("Audio Settings")]
-    private AudioSource Source;
     public AudioClip WaypointPlacement;
     public AudioClip NegativePlacement;
+    private AudioSource Source;
 
     void Start()
     {
@@ -27,7 +32,9 @@ public class SpawnWaypoint : MonoBehaviour
 
     void Update()
     {
+        //Place Waypoint
         WaypointsObj = GameObject.FindGameObjectsWithTag("Waypoint");
+        WaypointLights = MaxWaipoints - WaypointsCounter;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -56,6 +63,53 @@ public class SpawnWaypoint : MonoBehaviour
                 GameObject.Destroy(obj);       
                 WaypointsCounter = 0;
             }  
+        }
+
+        //Change Tool Lights Material
+
+        if(WaypointLights == 0)
+        {
+            WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+            WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+            WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+            WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+        }
+        else if(WaypointLights == 1)
+        {
+            WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+            WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+            WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+        }
+        else if(WaypointLights == 2)
+        {
+            WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+            WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+        }
+        else if(WaypointLights == 3)
+        {
+            WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+        }
+        else if(WaypointLights == 4)
+        {
+            WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+            WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+        }
+
+        if(Orb.GetComponent<Orb>().MatOn == true)
+        {
+            WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+        }
+        else
+        {
+            WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[2];
         }
     }
 }

@@ -21,15 +21,22 @@ public class Orb : MonoBehaviour
     public bool Active;
     public bool Arrived;
     private int current;
-    private int currentmax;
+    public int currentmax;
     private bool Forward;
     private bool OnWaypoint;
     private bool OnWall;
+    public bool MatOn;
+
+    [Header("Audio Settings")]
+    public AudioClip LaunchOrb;
+    public AudioClip NegativeLaunch;
+    private AudioSource Source;
     
     void Start()
     {
         current = 0;
         Active = false;
+        Source = GameObject.Find("Player").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,10 +45,15 @@ public class Orb : MonoBehaviour
         currentmax = Waypoint.Length-1;
 
         //Activation
-        if(Input.GetKeyDown(KeyCode.E) && currentmax != -1)
+        if(Input.GetKeyDown(KeyCode.E) && transform.position == WaypointStart.transform.position && currentmax > -1)
         {
             Active = true;
             Forward = true;    
+            Source.PlayOneShot(LaunchOrb, 0.25F);
+        }
+        else if(Input.GetKeyDown(KeyCode.E))
+        {
+            Source.PlayOneShot(NegativeLaunch, 0.25F);
         }
 
         //Material Change
@@ -76,6 +88,15 @@ public class Orb : MonoBehaviour
         else if (Red == false && Blue == false && Yellow == false)
        {
            gameObject.GetComponent<MeshRenderer>().material = OrbMat[7];
+       }
+
+       if(transform.position == WaypointStart.transform.position)
+       {
+           MatOn = true;
+       }
+       else
+       {
+           MatOn = false;
        }
     }
 
