@@ -162,3 +162,5 @@ MonoBehaviour:
   MatOn: 0
   LaunchOrb: {fileID: 8300000, guid: a26120a74bc995c4bb59c86a5a2f1b3b, type: 3}
   NegativeLaunch: {fileID: 8300000, guid: 688faed1a5f744540adb659c0780f32f, type: 3}
+  Correct: {fileID: 8300000, guid: 900637678eab7ee488f297b4c02f31fd, type: 3}
+  Error: {fileID: 8300000, guid: b9194d8f89617bf4eb55c88d29a3bf5b, type: 3}

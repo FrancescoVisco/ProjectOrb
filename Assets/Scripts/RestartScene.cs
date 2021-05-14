@@ -9,6 +9,11 @@ public class RestartScene : MonoBehaviour
     {
         
     }
+    
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
 
     void Update()
     {

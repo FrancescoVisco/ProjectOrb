@@ -99,6 +99,7 @@ public class CheckOrb : MonoBehaviour
         if(other.gameObject.tag == "Orb" && (CorrectColor == true || BasicLevel == true))
         {
             other.gameObject.GetComponent<Orb>().Arrived = true;
+            other.gameObject.GetComponent<Orb>().Source.PlayOneShot(other.gameObject.GetComponent<Orb>().Correct, 1F);  
             ObjectToActivate.GetComponent<Activation>().Active = true;
         }
     }

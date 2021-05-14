@@ -30,7 +30,9 @@ public class Orb : MonoBehaviour
     [Header("Audio Settings")]
     public AudioClip LaunchOrb;
     public AudioClip NegativeLaunch;
-    private AudioSource Source;
+    public AudioClip Correct;
+    public AudioClip Error;
+    public AudioSource Source;
     
     void Start()
     {
@@ -120,6 +122,7 @@ public class Orb : MonoBehaviour
                         else if(current == currentmax) 
                         {
                             Forward = false;
+                            Source.PlayOneShot(Error, 1F); 
                         }      
                     }
                     else
@@ -128,7 +131,7 @@ public class Orb : MonoBehaviour
                     }
                 }
                 else if(Forward == false)
-                {  
+                {                                       
                     if(transform.position == Waypoint[current].transform.position)
                     {    
                         if(current > 0)
@@ -148,7 +151,7 @@ public class Orb : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, WaypointStart.transform.position, Time.deltaTime * Speed);  
+                transform.position = Vector3.MoveTowards(transform.position, WaypointStart.transform.position, Time.deltaTime * Speed);
             }
             
             //Collision Wall settings
@@ -182,7 +185,8 @@ public class Orb : MonoBehaviour
 
             if(OnWall == true && OnWaypoint == false)
             {
-                Forward = false;            
+                Forward = false;
+                Source.PlayOneShot(Error, 1F);             
             }
         }
         else

@@ -2118,7 +2118,7 @@ MonoBehaviour:
   Waypoint: {fileID: 8614133650635648573, guid: ff1319e42a21b8346b038718249a2c21, type: 3}
   Orb: {fileID: 0}
   WaypointsCounter: 0
-  MaxWaipoints: 3
+  MaxWaipoints: 4
   WaypointLight:
   - {fileID: 2091285715}
   - {fileID: 343378214}
@@ -2130,7 +2130,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 68cf76310d4ada04ea2ca2f8dc3860da, type: 2}
   - {fileID: 2100000, guid: 5558cd18e2f70b944bf2d1d84ae8683d, type: 2}
   - {fileID: 2100000, guid: 09884c8235d64134baf7798df3e50beb, type: 2}
-  WaypointPlacement: {fileID: 8300000, guid: e0abbbf0bded0e148be5599f7438045c, type: 3}
+  WaypointPlacement: {fileID: 8300000, guid: 203b0e45b90fb0b41ad692cf35bda664, type: 3}
   NegativePlacement: {fileID: 8300000, guid: 949890bd386bcf94ea3b165a8cf62640, type: 3}
 --- !u!1 &2402515589364114092
 GameObject:

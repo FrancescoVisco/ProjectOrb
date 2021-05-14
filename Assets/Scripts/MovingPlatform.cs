@@ -100,7 +100,7 @@ public class MovingPlatform : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.transform.parent = transform;
-            Source.PlayOneShot(LiftSound, 0.25F);
+            Source.PlayOneShot(LiftSound, 1F);
             Lift = false;
         }
     }
