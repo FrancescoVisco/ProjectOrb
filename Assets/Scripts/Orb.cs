@@ -49,9 +49,9 @@ public class Orb : MonoBehaviour
         {
             Active = true;
             Forward = true;    
-            Source.PlayOneShot(LaunchOrb, 0.25F);
+            Source.PlayOneShot(LaunchOrb, 0.5F);
         }
-        else if(Input.GetKeyDown(KeyCode.E))
+        else if(Input.GetKeyDown(KeyCode.E) && !Source.isPlaying)
         {
             Source.PlayOneShot(NegativeLaunch, 0.25F);
         }
@@ -102,6 +102,8 @@ public class Orb : MonoBehaviour
 
     void FixedUpdate()
     {
+        Physics.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
+
         //Orb Follow Waypoints
         if(Arrived == false)
         {

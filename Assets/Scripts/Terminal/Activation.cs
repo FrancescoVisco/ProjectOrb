@@ -27,5 +27,10 @@ public class Activation : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnWaypoint>().WaypointsCounter = 0;
             }  
         }
+        else
+        {
+            this.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            this.gameObject.GetComponent<BoxCollider>().enabled = true;            
+        }
     }
 }

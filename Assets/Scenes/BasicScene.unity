@@ -7063,10 +7063,6 @@ PrefabInstance:
       propertyPath: Orb
       value: 
       objectReference: {fileID: 282261800}
-    - target: {fileID: 2320465655258225159, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
-      propertyPath: MaxWaipoints
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2322182115374301996, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
       propertyPath: m_RootOrder
       value: 2

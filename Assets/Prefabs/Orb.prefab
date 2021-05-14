@@ -158,3 +158,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d958d7bcd97a7124891d16e3647c35e3, type: 2}
   Active: 0
   Arrived: 0
+  currentmax: 0
+  MatOn: 0
+  LaunchOrb: {fileID: 8300000, guid: a26120a74bc995c4bb59c86a5a2f1b3b, type: 3}
+  NegativeLaunch: {fileID: 8300000, guid: 688faed1a5f744540adb659c0780f32f, type: 3}

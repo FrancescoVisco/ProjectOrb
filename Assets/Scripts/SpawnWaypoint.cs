@@ -49,7 +49,7 @@ public class SpawnWaypoint : MonoBehaviour
                     Instantiate(Waypoint, hit.point, Quaternion.identity);
                     WaypointsCounter++;
                 }
-                else
+                else if(!Source.isPlaying)
                 {
                     Source.PlayOneShot(NegativePlacement, 0.25F);
                 }

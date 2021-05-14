@@ -13,6 +13,9 @@ public class MovingPlatform : MonoBehaviour
  
     [SerializeField]
     float changeDirectionDelay;
+    public bool Lift;
+    public AudioSource Source;
+    public AudioClip LiftSound;
  
     
     private Transform destinationTarget, departTarget;
@@ -32,26 +35,29 @@ public class MovingPlatform : MonoBehaviour
  
         startTime = Time.time;
         journeyLength = Vector3.Distance(departTarget.position, destinationTarget.position);
+
+        Source = GetComponent<AudioSource>();
     }
  
    
     void FixedUpdate()
     {
-        Move();
+        if(Lift == false)
+        {
+            Move();
+        }
     }
  
     private void Move()
     {
- 
- 
         if (!isWaiting)
         {
             if(Vector3.Distance(transform.position, destinationTarget.position) > 0.01f)
             {
                 float distCovered = (Time.time - startTime) * speed;
- 
+    
                 float fractionOfJourney = distCovered / journeyLength;
- 
+    
                 transform.position = Vector3.Lerp(departTarget.position, destinationTarget.position, fractionOfJourney);
             }
             else
@@ -60,8 +66,6 @@ public class MovingPlatform : MonoBehaviour
                 StartCoroutine(changeDelay());
             }
         }
- 
- 
     }
  
     void ChangeDestination()
@@ -96,7 +100,8 @@ public class MovingPlatform : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.transform.parent = transform;
- 
+            Source.PlayOneShot(LiftSound, 0.25F);
+            Lift = false;
         }
     }
  
