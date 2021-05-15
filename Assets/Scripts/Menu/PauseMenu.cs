@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
