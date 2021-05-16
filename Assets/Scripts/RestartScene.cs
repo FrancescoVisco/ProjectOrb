@@ -22,6 +22,11 @@ public class RestartScene : MonoBehaviour
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex;
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;              
         }
+
+        if(GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

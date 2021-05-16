@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379112
+  m_Name: pb_Mesh468024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -638,7 +638,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379126
+  m_Name: pb_Mesh468038
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -802,7 +802,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379280
+  m_Name: pb_Mesh468192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1517,7 +1517,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh378976
+  m_Name: pb_Mesh467888
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2203,7 +2203,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379252
+  m_Name: pb_Mesh468164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4503,7 +4503,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379268
+  m_Name: pb_Mesh468180
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5192,7 +5192,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379066
+  m_Name: pb_Mesh467978
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5356,7 +5356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379042
+  m_Name: pb_Mesh467954
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5520,7 +5520,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh378996
+  m_Name: pb_Mesh467908
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6300,7 +6300,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379024
+  m_Name: pb_Mesh467936
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6464,7 +6464,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh379178
+  m_Name: pb_Mesh468090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7610,6 +7610,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6187840277308268300, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6187840277413942022, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
       propertyPath: m_Name
       value: Lights
@@ -7657,6 +7661,18 @@ PrefabInstance:
     - target: {fileID: 6187840277413942023, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187840277596224880, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187840277816491832, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6187840279009100284, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
+      propertyPath: m_Intensity
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e8339eb8f0e9543b13119e2c17bdf7, type: 3}
