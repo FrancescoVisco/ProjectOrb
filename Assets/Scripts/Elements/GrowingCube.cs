@@ -44,13 +44,17 @@ public class GrowingCube : MonoBehaviour
             InterpolateTime += speed * Time.deltaTime;
             transform.position = Vector3.Lerp(departTarget.position, destinationTarget.position, InterpolateTime);
         }
+        else
+        {
+            Source.Stop();
+        }
     }
  
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Source.PlayOneShot(LiftSound, 1F);
+            Source.PlayOneShot(LiftSound, 0.5F);
             Lift = false;
         }
     }

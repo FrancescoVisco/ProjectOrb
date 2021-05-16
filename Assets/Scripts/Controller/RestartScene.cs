@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class RestartScene : MonoBehaviour
 {
+    public AudioSource Source;
+    public AudioClip Wind;
+
     void Start()
     {
         
@@ -13,6 +16,7 @@ public class RestartScene : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        Source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,6 +37,7 @@ public class RestartScene : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            Source.PlayOneShot(Wind, 1F);
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex;
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;              
         }
