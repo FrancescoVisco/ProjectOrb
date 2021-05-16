@@ -28,5 +28,14 @@ public class RestartScene : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex;
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;              
+        }
+    }
 }
 
