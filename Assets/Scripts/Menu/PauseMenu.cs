@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 GameObject.Find("Player").GetComponent<FirstPersonAIO>().enabled = false;
-                GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = false;
+                //GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = false;
                 PauseMenuUI.SetActive(true);
                 Time.timeScale = 0f;
             }
@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             GameObject.Find("Player").GetComponent<FirstPersonAIO>().enabled = true;
-            GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = true;
+            //GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = true;
             PauseMenuUI.SetActive(false);
             Time.timeScale = 1f;  
         }
