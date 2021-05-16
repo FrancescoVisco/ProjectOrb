@@ -20,7 +20,7 @@ public class Rotate : MonoBehaviour
     {
         if(ObjectRotating == true && GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused == false)
         {
-            RotateSpeed = 0.1f;
+            RotateSpeed = 0.08f;
         }else if(PlatformRotating == true && GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused == false)
         {
             RotateSpeed = 0.25f;
