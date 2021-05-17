@@ -15,6 +15,7 @@ public class SpawnWaypoint : MonoBehaviour
     public int WaypointsCounter;
     public int MaxWaipoints;
     private int WaypointLights;
+    private GameObject WaypointStart;
 
     [Header("Waypoint Lights Settings")]
     public GameObject[] WaypointLight;
@@ -29,6 +30,7 @@ public class SpawnWaypoint : MonoBehaviour
     void Start()
     {
         Source = GetComponent<AudioSource>();
+        WaypointStart = Orb.GetComponent<Orb>().WaypointStart;
     }
 
     void Update()
@@ -57,7 +59,7 @@ public class SpawnWaypoint : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButtonDown(1) && Orb.GetComponent<Orb>().Active == false)
+        if(Input.GetMouseButtonDown(1) && Orb.GetComponent<Orb>().Active == false && GameObject.Find("Orb").GetComponent<Orb>().OnStart == true)
         {    
             foreach(GameObject obj in WaypointsObj)
             {
@@ -105,11 +107,12 @@ public class SpawnWaypoint : MonoBehaviour
                 WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
             }
 
-            if(Orb.GetComponent<Orb>().MatOn == true)
+            if(Orb.GetComponent<Orb>().OnStart == true)
             {
                 WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
             }
-            else
+            
+            if(Orb.GetComponent<Orb>().OnStart == false && GameObject.Find("Orb").GetComponent<Orb>().Active == true)
             {
                 WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[2];
             }

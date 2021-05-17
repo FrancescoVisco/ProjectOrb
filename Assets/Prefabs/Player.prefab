@@ -5285,11 +5285,11 @@ MonoBehaviour:
   WaypointsCounter: 0
   MaxWaipoints: 4
   WaypointLight:
-  - {fileID: 2091285715, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
-  - {fileID: 343378214, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
-  - {fileID: 1268312526, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
-  - {fileID: 1884977125, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
-  - {fileID: 1879920172, guid: 5fb6e1757c6a6eb478db25ccbb577fb4, type: 3}
+  - {fileID: 5559845997914291121}
+  - {fileID: 5559845996607804447}
+  - {fileID: 5559845996947315533}
+  - {fileID: 5559845997225141036}
+  - {fileID: 5559845998178299814}
   WaypointLightMaterial:
   - {fileID: 2100000, guid: 945690261f160ff49a73cf626ce97901, type: 2}
   - {fileID: 2100000, guid: 68cf76310d4ada04ea2ca2f8dc3860da, type: 2}

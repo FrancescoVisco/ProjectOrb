@@ -18,6 +18,7 @@ public class Orb : MonoBehaviour
     public Material[] OrbMat;
 
     [Header("Debug")]
+    public bool OnStart;
     public bool Active;
     public bool Arrived;
     private int current;
@@ -25,7 +26,6 @@ public class Orb : MonoBehaviour
     private bool Forward;
     private bool OnWaypoint;
     private bool OnWall;
-    public bool MatOn;
 
     [Header("Audio Settings")]
     public AudioClip LaunchOrb;
@@ -91,20 +91,20 @@ public class Orb : MonoBehaviour
        {
            gameObject.GetComponent<MeshRenderer>().material = OrbMat[7];
        }
-
-       if(transform.position == WaypointStart.transform.position)
-       {
-           MatOn = true;
-       }
-       else
-       {
-           MatOn = false;
-       }
     }
 
     void FixedUpdate()
     {
         Physics.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
+
+        if(transform.position == WaypointStart.transform.position)
+        {
+            OnStart = true;
+        }
+        else
+        {
+            OnStart = false;
+        }
 
         //Orb Follow Waypoints
         if(Arrived == false)
