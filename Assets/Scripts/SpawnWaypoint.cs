@@ -33,7 +33,7 @@ public class SpawnWaypoint : MonoBehaviour
         WaypointStart = Orb.GetComponent<Orb>().WaypointStart;
     }
 
-    void Update()
+    public void Update()
     {
         //Place Waypoint
         WaypointsObj = GameObject.FindGameObjectsWithTag("Waypoint");
@@ -107,12 +107,11 @@ public class SpawnWaypoint : MonoBehaviour
                 WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
             }
 
-            if(Orb.GetComponent<Orb>().OnStart == true)
+            if(GameObject.Find("Orb").GetComponent<Orb>().OnStart == true)
             {
                 WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
             }
-            
-            if(Orb.GetComponent<Orb>().OnStart == false && GameObject.Find("Orb").GetComponent<Orb>().Active == true)
+            else if(GameObject.Find("Orb").GetComponent<Orb>().OnStart == false)
             {
                 WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[2];
             }
