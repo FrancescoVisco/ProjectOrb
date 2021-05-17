@@ -16,7 +16,7 @@ public class Activation : MonoBehaviour
         if(Active == true)
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = false;
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            this.gameObject.GetComponent<MeshCollider>().enabled = false;
             
             GameObject[] WaypointsObj;
             WaypointsObj = GameObject.FindGameObjectsWithTag("Waypoint");
@@ -30,7 +30,7 @@ public class Activation : MonoBehaviour
         else
         {
             this.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            this.gameObject.GetComponent<BoxCollider>().enabled = true;            
+            this.gameObject.GetComponent<MeshCollider>().enabled = true;            
         }
     }
 }
