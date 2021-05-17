@@ -9,6 +9,7 @@ namespace CMF
     {
         public int ThisScene;
         private bool InTrigger = false;
+        public int SceneToLoad;
         
         void Start()
         {
@@ -20,6 +21,7 @@ namespace CMF
             if(InTrigger == true)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<AdvancedWalkerController>().enabled = false;
+                GameObject.FindGameObjectWithTag("CameraControls").GetComponent<CameraController>().enabled = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnWaypoint>().enabled = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().isKinematic = true;
             }
@@ -32,7 +34,7 @@ namespace CMF
                 InTrigger = true;
                 GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;
                 GameObject.Find("LevelLoader").GetComponent<LevelLoader>().transitionTime = 2f;
-                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = ThisScene+1;
+                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneToLoad;
             }
         }
     }

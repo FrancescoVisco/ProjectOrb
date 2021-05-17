@@ -7,6 +7,8 @@ public class RestartScene : MonoBehaviour
 {
     public AudioSource Source;
     public AudioClip Wind;
+    public int ThisScene;
+    public int SceneToLoad;
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class RestartScene : MonoBehaviour
 
     void Update()
     {
+        ThisScene = ThisScene = SceneManager.GetActiveScene().buildIndex;
+
         if(Input.GetKeyDown(KeyCode.R))
         {
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex;
@@ -31,6 +35,7 @@ public class RestartScene : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -38,7 +43,7 @@ public class RestartScene : MonoBehaviour
         if(other.tag == "Player")
         {
             Source.PlayOneShot(Wind, 1F);
-            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex;
+            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneToLoad;
             GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;              
         }
     }

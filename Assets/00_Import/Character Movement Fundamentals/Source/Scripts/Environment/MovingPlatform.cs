@@ -12,6 +12,8 @@ namespace CMF
 		public float movementSpeed = 10f;
 		public bool Lift;
 		public bool OnlyUp;
+		public AudioClip Movement;
+		public AudioSource Source;
 
 		//Check to reverse order of waypoints;
 		public bool reverseDirection = false;
@@ -33,7 +35,8 @@ namespace CMF
 
 		//Start;
 		void Start () {
-
+			
+			Source = GetComponent<AudioSource>();
 			//Get references to components;
 			r = GetComponent<Rigidbody>();
 			triggerArea = GetComponentInChildren<TriggerArea>();
@@ -66,6 +69,7 @@ namespace CMF
 
 				if(Lift == true)
 				{
+					Source.PlayOneShot(Movement, 0.25F);
 					MovePlatform();
 				}
 			}
@@ -123,10 +127,24 @@ namespace CMF
 
 			//If end of list has been reached, reset index;
 			if(currentWaypointIndex >= waypoints.Count && OnlyUp == false)
+			{
 				currentWaypointIndex = 0;
+			}
+			else
+			{
+				Source.Stop();
+			}
+				
 
 			if(currentWaypointIndex < 0 && OnlyUp == false)
+			{
 				currentWaypointIndex = waypoints.Count - 1;
+			}
+			else
+			{
+				Source.Stop();
+			}
+
 
 			currentWaypoint = waypoints[currentWaypointIndex];
 

@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 65908774871473028}
   - component: {fileID: 82200963698192314}
   - component: {fileID: 114963660857855570}
+  - component: {fileID: 1633087547466212544}
   m_Layer: 0
   m_Name: GravityFlipper
   m_TagString: Untagged
@@ -107,9 +108,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713206883672332}
-  m_LocalRotation: {x: 0.49999994, y: -0.49999994, z: -0.5000003, w: -0.4999998}
+  m_LocalRotation: {x: 0.5000001, y: -0.5000001, z: -0.4999999, w: -0.4999999}
   m_LocalPosition: {x: -1, y: -4.9700003, z: 1.9700012}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4521112042025696}
   - {fileID: 7665682953111031504}
@@ -237,6 +238,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f81dbe5e0c02214a9323c73646ecb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1633087547466212544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713206883672332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9ec7cf2ca9d4d4ead3bd31910d1664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 0}
+  Voice: {fileID: 0}
 --- !u!1 &2381240189565710466
 GameObject:
   m_ObjectHideFlags: 0

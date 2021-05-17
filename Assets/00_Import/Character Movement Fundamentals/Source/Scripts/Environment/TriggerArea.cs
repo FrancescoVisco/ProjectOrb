@@ -22,6 +22,7 @@ namespace CMF
 			if(col.tag == "Player")
 			{
 				MovingPlatform.GetComponent<MovingPlatform>().Lift = true;
+				MovingPlatform.GetComponent<MovingPlatform>().Source.PlayOneShot(MovingPlatform.GetComponent<MovingPlatform>().Movement, 0.25F);
 			}
 		}
 
