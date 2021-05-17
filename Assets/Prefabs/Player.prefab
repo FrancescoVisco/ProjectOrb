@@ -859,9 +859,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148211591939}
-  m_LocalRotation: {x: -0.33476096, y: -0.59938693, z: 0.09418567, w: 0.7209713}
-  m_LocalPosition: {x: 0.16200826, y: -0.3070115, z: 0.21847726}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalRotation: {x: -0.34191048, y: -0.6189485, z: 0.088789284, w: 0.70151013}
+  m_LocalPosition: {x: 0.18, y: -0.34, z: 0.21847726}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_Children:
   - {fileID: 4233864540420890696}
   - {fileID: 1958542539040906787}
@@ -883,7 +883,7 @@ Transform:
   - {fileID: 1501855686412354038}
   m_Father: {fileID: 2322446863099257336}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -21.703, y: -86.462, z: 35.317}
+  m_LocalEulerAnglesHint: {x: -21.703, y: -90, z: 36.13}
 --- !u!95 &5866666020705840067
 Animator:
   serializedVersion: 3
@@ -1690,8 +1690,8 @@ Camera:
   m_GameObject: {fileID: 2319845797006334530}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1849,7 +1849,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 87892d6732f494b4989a0d1e7d5cf440, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2109,7 +2109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2320465655258225158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c94a5276bef04c45a5b95e725448eba, type: 3}
   m_Name: 
@@ -2118,7 +2118,7 @@ MonoBehaviour:
   Waypoint: {fileID: 8614133650635648573, guid: ff1319e42a21b8346b038718249a2c21, type: 3}
   Orb: {fileID: 0}
   WaypointsCounter: 0
-  MaxWaipoints: 4
+  MaxWaipoints: 3
   WaypointLight:
   - {fileID: 2091285715}
   - {fileID: 343378214}
@@ -2130,8 +2130,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 68cf76310d4ada04ea2ca2f8dc3860da, type: 2}
   - {fileID: 2100000, guid: 5558cd18e2f70b944bf2d1d84ae8683d, type: 2}
   - {fileID: 2100000, guid: 09884c8235d64134baf7798df3e50beb, type: 2}
+  Respawn: 0
   WaypointPlacement: {fileID: 8300000, guid: 203b0e45b90fb0b41ad692cf35bda664, type: 3}
   NegativePlacement: {fileID: 8300000, guid: 949890bd386bcf94ea3b165a8cf62640, type: 3}
+  Source: {fileID: 0}
 --- !u!1 &2402515589364114092
 GameObject:
   m_ObjectHideFlags: 0
