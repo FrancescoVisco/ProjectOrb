@@ -91,11 +91,6 @@ public class Orb : MonoBehaviour
        {
            gameObject.GetComponent<MeshRenderer>().material = OrbMat[7];
        }
-    }
-
-    void FixedUpdate()
-    {
-        Physics.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
 
         if(transform.position == WaypointStart.transform.position)
         {
@@ -105,6 +100,11 @@ public class Orb : MonoBehaviour
         {
             OnStart = false;
         }
+    }
+
+    void FixedUpdate()
+    {
+        Physics.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider>(), gameObject.GetComponent<Collider>(), true);
 
         //Orb Follow Waypoints
         if(Arrived == false)
