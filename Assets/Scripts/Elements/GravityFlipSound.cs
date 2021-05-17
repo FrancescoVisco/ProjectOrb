@@ -10,7 +10,7 @@ public class GravityFlipSound : MonoBehaviour
 
     void Start()
     {
-        Source = GetComponent<AudioSource>();
+        //Source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class GravityFlipSound : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && Played == false)
         {
-            Source.PlayOneShot(Voice, 0.5f);
+            Source.PlayOneShot(Voice, 1f);
             Played = true;
         }
     }

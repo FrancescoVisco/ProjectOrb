@@ -21,7 +21,7 @@ namespace CMF
             if(InTrigger == true)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<AdvancedWalkerController>().enabled = false;
-                GameObject.FindGameObjectWithTag("CameraControls").GetComponent<CameraController>().enabled = false;
+                GameObject.Find("CameraControls").GetComponent<CameraController>().enabled = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<SpawnWaypoint>().enabled = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().isKinematic = true;
             }
