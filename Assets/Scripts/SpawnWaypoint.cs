@@ -35,6 +35,7 @@ public class SpawnWaypoint : MonoBehaviour
 
     public void Update()
     {
+        Physics.IgnoreLayerCollision(7, 6, true);
         //Place Waypoint
         WaypointsObj = GameObject.FindGameObjectsWithTag("Waypoint");
         WaypointLights = MaxWaipoints - WaypointsCounter;
