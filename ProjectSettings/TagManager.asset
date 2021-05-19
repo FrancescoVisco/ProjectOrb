@@ -10,6 +10,7 @@ TagManager:
   - WaypointWall
   - GravityWall
   - ColorPortal
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

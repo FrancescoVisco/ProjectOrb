@@ -21,11 +21,11 @@ public class Orb : MonoBehaviour
     public bool OnStart;
     public bool Active;
     public bool Arrived;
-    private int current;
+    public int current;
     public int currentmax;
-    private bool Forward;
-    private bool OnWaypoint;
-    private bool OnWall;
+    public bool Forward;
+    public bool OnWaypoint;
+    public bool OnWall;
 
     [Header("Audio Settings")]
     public AudioClip LaunchOrb;
@@ -212,7 +212,24 @@ public class Orb : MonoBehaviour
             {
                 Active = false;
             }        
-        }        
+        }   
+
+        if(other.gameObject.tag == "MovingPlatform")
+        {
+            Debug.Log("picchio");
+            if(current > 0 && Forward == true)
+            {
+                current -= 1;
+            }
+            else if(Forward == false)
+            {
+                current += 1;
+            }
+            else
+            {
+                Active = false;
+            }        
+        }      
     }
 
     void OnCollisionExit(Collision other)
