@@ -9,6 +9,7 @@ TagManager:
   - Orb
   - WaypointWall
   - GravityWall
+  - ColorPortal
   layers:
   - Default
   - TransparentFX

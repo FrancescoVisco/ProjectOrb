@@ -138,7 +138,7 @@ public class Orb : MonoBehaviour
                         { 
                             current -= 1;
                         }
-                        else if(current == 0)
+                        else if(current == 0 || current == -1)
                         {
                             Active = false;
                         }    
@@ -203,7 +203,10 @@ public class Orb : MonoBehaviour
 
             if(current > 0)
             {
-                current -= 1;
+                if(current == currentmax)
+                {
+                    current -= 1;
+                }
             }
             else
             {
@@ -225,6 +228,47 @@ public class Orb : MonoBehaviour
         if(other.gameObject.tag == "Waypoint" || other.gameObject.tag == "Respawn")
         {
             OnWaypoint = true;
+        }
+
+        if(other.gameObject.tag == "ColorPortal")
+        {
+            Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
+
+            if(other.gameObject.GetComponent<ColorPortal>().Red == true)
+            {
+                if(Red == true)
+                {
+                    Red = false;
+                }
+                else
+                {
+                    Red = true;
+                }
+            }
+
+            if(other.gameObject.GetComponent<ColorPortal>().Blue == true)
+            {
+                if(Blue == true)
+                {
+                    Blue = false;
+                }
+                else
+                {
+                    Blue = true;
+                }              
+            }
+
+            if(other.gameObject.GetComponent<ColorPortal>().Yellow == true)
+            {
+                if(Yellow == true)
+                {
+                    Yellow = false;
+                }
+                else
+                {
+                    Yellow = true;
+                }                 
+            }
         }
     }
 

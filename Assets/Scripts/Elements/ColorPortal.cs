@@ -18,8 +18,6 @@ public class ColorPortal : MonoBehaviour
 
     void Update()
     {
-
-
         //Material Change
         if(Red == true && Blue == false && Yellow == false)
         {
@@ -34,47 +32,4 @@ public class ColorPortal : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material = PortalMat[2];
         }
     } 
-
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Orb")
-        {
-            Physics.IgnoreCollision(other.GetComponent<Collider>(), GetComponent<Collider>());
-            if(Red == true)
-            {
-                if(other.gameObject.GetComponent<Orb>().Red == true)
-                {
-                    other.gameObject.GetComponent<Orb>().Red = false;
-                }
-                else
-                {
-                    other.gameObject.GetComponent<Orb>().Red = true;
-                }
-            }
-
-            if(Blue == true)
-            {
-                if(other.gameObject.GetComponent<Orb>().Blue == true)
-                {
-                    other.gameObject.GetComponent<Orb>().Blue = false;
-                }
-                else
-                {
-                    other.gameObject.GetComponent<Orb>().Blue = true;
-                }              
-            }
-
-            if(Yellow == true)
-            {
-                if(other.gameObject.GetComponent<Orb>().Yellow == true)
-                {
-                    other.gameObject.GetComponent<Orb>().Yellow = false;
-                }
-                else
-                {
-                    other.gameObject.GetComponent<Orb>().Yellow = true;
-                }                 
-            }
-        }
-    }
 }
