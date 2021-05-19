@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/05_Lv3.unity
     guid: edc082295f90b214ea8e2ab22dbd883c
   - enabled: 1
+    path: Assets/Scenes/06_ColorPanel.unity
+    guid: 725d99367d407044ba0bc010abda8b10
+  - enabled: 1
     path: Assets/Scenes/TestScenes/ColorScene.unity
     guid: f929845cb2bf4fb4382dbf4ea3523882
   m_configObjects: {}

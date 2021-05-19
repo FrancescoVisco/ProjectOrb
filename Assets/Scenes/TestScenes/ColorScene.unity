@@ -755,7 +755,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh958450
+  m_Name: pb_Mesh56716
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1719,9 +1719,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 858232690}
   - {fileID: 1753198818}
   - {fileID: 410026048}
+  - {fileID: 858232690}
   m_Father: {fileID: 1410258454}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2812,7 +2812,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh958378
+  m_Name: pb_Mesh56644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3214,7 +3214,6 @@ GameObject:
   - component: {fileID: 410026051}
   - component: {fileID: 410026050}
   - component: {fileID: 410026049}
-  - component: {fileID: 410026054}
   m_Layer: 3
   m_Name: ColorPortal (1)
   m_TagString: ColorPortal
@@ -3234,7 +3233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 178527425}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &410026049
 MonoBehaviour:
@@ -3534,22 +3533,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!54 &410026054
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410026047}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!43 &497228880
 Mesh:
   m_ObjectHideFlags: 0
@@ -5666,7 +5649,6 @@ GameObject:
   - component: {fileID: 858232693}
   - component: {fileID: 858232692}
   - component: {fileID: 858232691}
-  - component: {fileID: 858232696}
   m_Layer: 3
   m_Name: ColorPortal (2)
   m_TagString: ColorPortal
@@ -5686,7 +5668,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 178527425}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &858232691
 MonoBehaviour:
@@ -5986,22 +5968,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!54 &858232696
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858232689}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!1 &871523890
 GameObject:
   m_ObjectHideFlags: 0
@@ -7466,27 +7432,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1153848616 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2568910229936274491, guid: 99f5eb74b1f762d4e8741abdb16da959, type: 3}
-  m_PrefabInstance: {fileID: 2568910229534690522}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1153848617
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153848616}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!1 &1154808813
 GameObject:
   m_ObjectHideFlags: 0
@@ -8427,7 +8372,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh958286
+  m_Name: pb_Mesh56552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12986,7 +12931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568910229936274488, guid: 99f5eb74b1f762d4e8741abdb16da959, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2568910229936274488, guid: 99f5eb74b1f762d4e8741abdb16da959, type: 3}
       propertyPath: m_LocalPosition.x
