@@ -216,7 +216,6 @@ public class Orb : MonoBehaviour
 
         if(other.gameObject.tag == "MovingPlatform")
         {
-            Debug.Log("picchio");
             if(current > 0 && Forward == true)
             {
                 current -= 1;
