@@ -5624,8 +5624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9be22bce34010f43b12190b15d84b00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upperVerticalLimit: 60
-  lowerVerticalLimit: 60
+  upperVerticalLimit: 90
+  lowerVerticalLimit: 70
   cameraSpeed: 100
   useMouseInput: 1
   smoothCameraRotation: 0
