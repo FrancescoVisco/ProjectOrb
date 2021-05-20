@@ -59,6 +59,18 @@ namespace CMF
 			StartCoroutine(LateFixedUpdate());
 		}
 
+		void Update()
+		{
+			if(GameObject.Find("CanvasPause").GetComponent<PauseMenu>().GameIsPaused == false)
+			{
+				Source.Play(0);
+			}
+			else
+			{
+				Source.Pause();
+			}
+		}
+
 		//This coroutine ensures that platform movement always occurs after Fixed Update;
 		IEnumerator LateFixedUpdate()
 		{

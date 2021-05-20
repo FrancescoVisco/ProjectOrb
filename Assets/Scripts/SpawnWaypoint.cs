@@ -47,7 +47,7 @@ public class SpawnWaypoint : MonoBehaviour
             
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.tag == "WaypointWall" && WaypointsCounter < MaxWaipoints)
+                if ((hit.transform.tag == "WaypointWall" && WaypointsCounter < MaxWaipoints) && Respawn == false)
                 {
                     Source.PlayOneShot(WaypointPlacement, 0.7F);
                     Instantiate(Waypoint, hit.point, Quaternion.identity);
@@ -60,7 +60,7 @@ public class SpawnWaypoint : MonoBehaviour
             }
         }
 
-        if(Input.GetMouseButtonDown(1) && Orb.GetComponent<Orb>().Active == false && GameObject.Find("Orb").GetComponent<Orb>().OnStart == true)
+        if(Input.GetMouseButtonDown(1) && Orb.GetComponent<Orb>().Active == false && GameObject.Find("Orb").GetComponent<Orb>().OnStart == true && Respawn == false)
         {    
             foreach(GameObject obj in WaypointsObj)
             {
