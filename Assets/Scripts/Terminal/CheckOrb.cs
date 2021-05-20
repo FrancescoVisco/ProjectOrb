@@ -60,27 +60,27 @@ public class CheckOrb : MonoBehaviour
        }
 
         //Check color
-        if(Red == true && Orb.GetComponent<Orb>().Red == true)
+        if(Red == true && Orb.GetComponent<Orb>().Red == true && Orb.GetComponent<Orb>().Yellow == false && Orb.GetComponent<Orb>().Blue == false)
         {
             CorrectColor = true;
         }
-        else if(Blue == true && Orb.GetComponent<Orb>().Blue == true)
+        else if(Blue == true && Orb.GetComponent<Orb>().Blue == true && Orb.GetComponent<Orb>().Yellow == false && Orb.GetComponent<Orb>().Red == false)
         {
             CorrectColor = true;
         }
-        else if(Yellow == true && Orb.GetComponent<Orb>().Yellow == true)
+        else if(Yellow == true && Orb.GetComponent<Orb>().Yellow == true && Orb.GetComponent<Orb>().Blue == false && Orb.GetComponent<Orb>().Red == false)
         {
             CorrectColor = true;
         }
-        else if(Green == true && Orb.GetComponent<Orb>().Blue == true && Orb.GetComponent<Orb>().Yellow == true)
+        else if(Green == true && Orb.GetComponent<Orb>().Blue == true && Orb.GetComponent<Orb>().Yellow == true && Orb.GetComponent<Orb>().Red == false)
         {
             CorrectColor = true;
         }
-        else if(Orange == true && Orb.GetComponent<Orb>().Red == true && Orb.GetComponent<Orb>().Yellow == true)
+        else if(Orange == true && Orb.GetComponent<Orb>().Red == true && Orb.GetComponent<Orb>().Yellow == true && Orb.GetComponent<Orb>().Blue == false)
         {
             CorrectColor = true;
         }
-        else if(Violet == true && Orb.GetComponent<Orb>().Red == true && Orb.GetComponent<Orb>().Blue == true)
+        else if(Violet == true && Orb.GetComponent<Orb>().Red == true && Orb.GetComponent<Orb>().Blue == true && Orb.GetComponent<Orb>().Yellow == false)
         {
             CorrectColor = true;
         }

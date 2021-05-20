@@ -6073,8 +6073,12 @@ PrefabInstance:
       value: EndTerminal
       objectReference: {fileID: 0}
     - target: {fileID: 5294946001350416798, guid: 086b1de1f9433d549b86c5ce33bf04f2, type: 3}
-      propertyPath: White
+      propertyPath: Green
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294946001350416798, guid: 086b1de1f9433d549b86c5ce33bf04f2, type: 3}
+      propertyPath: White
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5294946001350416798, guid: 086b1de1f9433d549b86c5ce33bf04f2, type: 3}
       propertyPath: BasicLevel
