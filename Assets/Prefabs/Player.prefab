@@ -5124,6 +5124,7 @@ GameObject:
   - component: {fileID: 5529880445715627329}
   - component: {fileID: 5560833890060207180}
   - component: {fileID: 5480362760049994763}
+  - component: {fileID: 2194829149189854099}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5299,6 +5300,7 @@ MonoBehaviour:
   WaypointPlacement: {fileID: 8300000, guid: 203b0e45b90fb0b41ad692cf35bda664, type: 3}
   NegativePlacement: {fileID: 8300000, guid: 949890bd386bcf94ea3b165a8cf62640, type: 3}
   Source: {fileID: 0}
+  ThisScene: 0
 --- !u!82 &5480362760049994763
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5395,6 +5397,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &2194829149189854099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560833890060207171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5105feb5c50130e4c91eb74d4367e693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolObtained: 0
 --- !u!1 &5561284769008069769
 GameObject:
   m_ObjectHideFlags: 0
@@ -5625,7 +5640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upperVerticalLimit: 90
-  lowerVerticalLimit: 70
+  lowerVerticalLimit: 80
   cameraSpeed: 100
   useMouseInput: 1
   smoothCameraRotation: 0

@@ -24,7 +24,7 @@ public class GetTool : MonoBehaviour
             StartCoroutine(Delay());
             Tool.SetActive(true);
             GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = true;
-            
+            GameObject.Find("Player").GetComponent<Tool>().ToolObtained = true;  
         }
     }
 

@@ -29,6 +29,7 @@ public class LeaveTool : MonoBehaviour
             ObjToActive.SetActive(true);
             Door.GetComponent<Activation>().Active = true;
             GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = false;  
+            GameObject.Find("Player").GetComponent<Tool>().ToolObtained = false;  
             Source.PlayOneShot(Voice, 1f);  
             Played = true;
         }

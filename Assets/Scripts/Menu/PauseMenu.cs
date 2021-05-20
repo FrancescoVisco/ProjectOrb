@@ -9,6 +9,7 @@ namespace CMF
     {
 
         public bool GameIsPaused = false;
+        public bool Tool;
         public GameObject PauseMenuUI;
         bool Exit = false;
 
@@ -37,9 +38,13 @@ namespace CMF
                 {
                     Cursor.lockState = CursorLockMode.None;
                     GameObject.Find("CameraControls").GetComponent<CameraController>().enabled = false;
-                    GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = false;
                     PauseMenuUI.SetActive(true);
                     Time.timeScale = 0f;
+
+                    if(GameObject.Find("Player").GetComponent<Tool>().ToolObtained == true)
+                    {
+                        GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = false;
+                    }
                 }
                 else
                 {
@@ -50,9 +55,13 @@ namespace CMF
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 GameObject.Find("CameraControls").GetComponent<CameraController>().enabled = true;
-                GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = true;
                 PauseMenuUI.SetActive(false);
                 Time.timeScale = 1f;  
+
+                    if(GameObject.Find("Player").GetComponent<Tool>().ToolObtained == true)
+                    {
+                        GameObject.Find("Player").GetComponent<SpawnWaypoint>().enabled = true;
+                    }
             }
         }
 
