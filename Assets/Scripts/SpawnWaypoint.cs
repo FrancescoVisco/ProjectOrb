@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnWaypoint : MonoBehaviour
 {
@@ -27,10 +28,13 @@ public class SpawnWaypoint : MonoBehaviour
     public AudioClip NegativePlacement;
     public AudioSource Source;
 
+    public int ThisScene;
+
     void Start()
     {
         Source = GetComponent<AudioSource>();
         WaypointStart = Orb.GetComponent<Orb>().WaypointStart;
+        ThisScene = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void Update()
@@ -119,11 +123,54 @@ public class SpawnWaypoint : MonoBehaviour
         }
         else if(GameObject.Find("Orb").GetComponent<Orb>().Arrived == true && Respawn == true)
         {
-            WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
-            WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
-            WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
-            WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
-            WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            if(ThisScene == 1 || ThisScene == 2)
+            {
+                WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+                WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+                WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            }
+            else if(ThisScene == 3)
+            {
+                WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+                WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            }
+            else if(ThisScene == 4)
+            {
+                WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+                WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            }
+            else if(ThisScene == 5)
+            {
+                WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+                WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            }
+            else if(ThisScene == 6)
+            {
+                WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[0];
+                WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            }
+            else if(ThisScene == 7)
+            {
+                WaypointLight[1].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[2].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[3].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[4].GetComponent<MeshRenderer>().material = WaypointLightMaterial[1];
+                WaypointLight[0].GetComponent<MeshRenderer>().material = WaypointLightMaterial[3];
+            }
         } 
     }
 }
