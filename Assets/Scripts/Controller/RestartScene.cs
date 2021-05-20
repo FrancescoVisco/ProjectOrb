@@ -33,8 +33,16 @@ public class RestartScene : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.L))
         {
-            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex+1;
-            GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;              
+            if(ThisScene == 9)
+            {
+                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = 0;
+                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;  
+            }
+            else
+            {
+                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad = SceneManager.GetActiveScene().buildIndex+1;
+                GameObject.Find("LevelLoader").GetComponent<LevelLoader>().Fade = true;  
+            }
         }
 
         if(GameObject.Find("LevelLoader").GetComponent<LevelLoader>().SceneToLoad == 0)
